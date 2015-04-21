@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="2.0">
+	<persistence-unit name="PU_NationalDatabase" transaction-type="JTA">
+		<!-- JPA provider -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<!-- entities mapped -->
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		
+		<properties>
+			<!-- connection properties -->
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/NATIONAL_DATABASE" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="1234abc@" />
+
+			<!-- hibernate properties -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<!-- <property name="hibernate.format_sql" value="true" /> -->
+
+			<!-- generate the table if needs -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+</persistence>
