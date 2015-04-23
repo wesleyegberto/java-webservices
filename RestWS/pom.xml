@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.wesleyegberto</groupId>
-	<artifactId>JavaWebServices</artifactId>
-	<packaging>jar</packaging>
+	<artifactId>RestWS</artifactId>
+	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>ServletsWS</name>
+	<name>RestWS</name>
 	<url>http://maven.apache.org</url>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -15,22 +15,11 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.5.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.5.2</version>
-		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>JavaWebServices</finalName>
+		<finalName>RestWS</finalName>
 	</build>
-
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
