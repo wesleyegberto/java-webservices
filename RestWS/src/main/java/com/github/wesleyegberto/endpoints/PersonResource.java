@@ -25,7 +25,6 @@ public class PersonResource {
 	private static int INVALID_DATA = 1;
 	private static int PERSON_NOT_FOUND = 10;
 	
-	
 	@Inject
 	private PersonManager personManager;
 
@@ -36,7 +35,7 @@ public class PersonResource {
 	}
 	
 	@GET
-	@Path("/{id: \\d+}")
+	@Path("/{id: \\d+}")	
 	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	public Response getPersonById(@PathParam("id") int id) {
 		Person person = personManager.searchPersonById(id);
