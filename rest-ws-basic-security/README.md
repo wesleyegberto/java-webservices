@@ -6,10 +6,10 @@
 
 #### Tables ####
 
-´´´
+```
 CREATE TABLE Users(username VARCHAR(255) PRIMARY KEY, passwd VARCHAR(255))
 CREATE TABLE UserRoles(username VARCHAR(255), role VARCHAR(32)) 
-´´´
+```
 
 
 
@@ -18,16 +18,16 @@ CREATE TABLE UserRoles(username VARCHAR(255), role VARCHAR(32))
 User: admin
 Password: admin
 
-´´´
+```
 INSERT INTO Users (`username`, `passwd`) VALUES ('admin', 'jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=');
 INSERT INTO UserRoles (`username`, `role`) VALUES ('admin', 'ADMIN');
-´´´
+```
 
 
 
 #### Security Domain in WildFly ####
 
-´´´
+```
 <security-domain name="GeneralRealm" cache-type="default">
 	<authentication>
 		<login-module code="Database" flag="required">
@@ -39,7 +39,7 @@ INSERT INTO UserRoles (`username`, `role`) VALUES ('admin', 'ADMIN');
 		</login-module>
 	</authentication>
 </security-domain>
-´´´
+```
 
 
 ### Setup DD ###
