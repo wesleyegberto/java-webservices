@@ -3,10 +3,25 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+
+
+	<security-role>
+		<description>A customer of the service</description>
+		<role-name>customer</role-name>
+	</security-role>
 
 	<security-constraint>
+		<display-name>Customer Services</display-name>
 		<web-resource-collection>
-			<url-pattern></url-pattern>
+			<url-pattern>/resources/*</url-pattern>
+			<!-- All HTTP methods -->
 		</web-resource-collection>
+		<auth-constraint>
+			<role-name>customer</role-name>
+		</auth-constraint>
 	</security-constraint>
+	
 </web-app>

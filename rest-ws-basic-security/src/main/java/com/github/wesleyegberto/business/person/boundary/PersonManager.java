@@ -3,8 +3,8 @@ package com.github.wesleyegberto.business.person.boundary;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import com.github.wesleyegberto.business.person.entity.Person;
@@ -12,11 +12,11 @@ import com.github.wesleyegberto.business.person.entity.Person;
 @Stateless
 public class PersonManager {
 
-	@Inject
+	@PersistenceContext
 	private EntityManager em;
 	
 	public List<Person> fetchAll() {
-		TypedQuery<Person> createQuery = em.createQuery("SELECT p FROM Person p", Person.class);
+		TypedQuery<Person> createQuery = em.createNamedQuery(Person.FETCH_ALL, Person.class);
 		return createQuery.getResultList();
 	}
 
