@@ -18,10 +18,10 @@ public class CorsEnablerFilter implements ContainerResponseFilter {
 			throws IOException {
 		log.info("Executing REST response filter");
 
-		requestContext.getHeaders().add("Access-Control-Allow-Origin", "*");
-		requestContext.getHeaders().add("Access-Control-Allow-Credentials", "true");
-		requestContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
-		requestContext.getHeaders().add( "Access-Control-Allow-Headers", "AUTH_TOKEN");
+		responseContext.getHeaders().add("Access-Control-Allow-Origin", "*");
+		responseContext.getHeaders().add("Access-Control-Allow-Credentials", "true");
+		responseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
+		responseContext.getHeaders().add( "Access-Control-Allow-Headers", "AUTH_TOKEN");
 	}
 
 }
